@@ -1,0 +1,24 @@
+{
+  "name": "fintech-chatbot-cli",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Micro-capstone: chatbot CLI em TypeScript com policy layer, contexto em camadas, streaming, retry, rate limit e autocrítica.",
+  "type": "module",
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "npm run clean && tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "eval": "tsx src/eval/run-eval.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test dist/tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
